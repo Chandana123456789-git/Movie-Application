@@ -1,0 +1,194 @@
+/* General body styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0eeee;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  font-size: 32px;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+/* Search section */
+.search-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* Input wrapper with mic */
+.search-wrapper {
+  position: relative;
+  width: 260px;
+}
+
+.search-wrapper input {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  font-size: 16px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* Mic icon styles */
+.mic-icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #000;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mic-icon i {
+  font-size: 14px;
+}
+
+/* Mic glowing animation */
+@keyframes micGlow {
+  0% { box-shadow: 0 0 0 rgba(255, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 10px rgba(255, 0, 0, 0.9); }
+  100% { box-shadow: 0 0 0 rgba(255, 0, 0, 0.5); }
+}
+
+.mic-icon.listening {
+  background-color: red;
+  animation: micGlow 1s infinite;
+}
+
+/* Optional search button (if kept) */
+.search-btn {
+  padding: 10px 16px;
+  font-size: 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.search-btn:hover {
+  background-color: #555;
+}
+
+/* Loading text */
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 10px;
+  display: none;
+}
+
+/* Movie cards container */
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Each movie card */
+.movie-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  width: 220px;
+  padding: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.movie-card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #111;
+}
+
+.movie-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Pagination section */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #222;
+  color: white;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:hover:enabled {
+  background-color: #444;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.page-number {
+  font-size: 16px;
+  padding: 10px 15px;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Responsive cards */
+@media (max-width: 768px) {
+  .movie-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .movie-card {
+    width: 90%;
+  }
+
+  .search-wrapper {
+    width: 90%;
+  }
+}
